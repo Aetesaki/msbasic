@@ -31,7 +31,8 @@ NOTCR:
 
 ESCAPE:
                 LDA     #$5C            ; "\".
-                JSR     ECHO            ; Output it.
+                ;JSR     ECHO           ; Output it.
+                JSR     WOZMONLCD       ; Output Init to LCD, and ECHO it
 
 GETLINE:
                 LDA     #$0D            ; Send CR
