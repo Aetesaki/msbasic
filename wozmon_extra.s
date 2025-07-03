@@ -14,3 +14,9 @@ wozmonlcdprint:
   jmp wozmonlcdprint
 wozmonlcd_END:
   rts
+
+WOZMONCRLF: ; Outputs LF in addition to CR
+  jsr ECHO
+  lda #0A
+  jsr ECHO
+  rts
