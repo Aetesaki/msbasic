@@ -1,5 +1,7 @@
 .segment "WOZMONEXTRA"
 
+; This file contains bug fixes and additions to wozmon
+
 wozmonlcdmessage: .asciiz "Wozmon running..."
 
 WOZMONLCD:
