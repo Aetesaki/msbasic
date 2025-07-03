@@ -125,6 +125,7 @@ IRQ_HANDLER:
                 rti
 
 .include "wozmon.s"
+.include "wozmon_extra.s"
 
 .segment "RESETVEC"
                 .word   $0F00           ; NMI vector
