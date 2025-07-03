@@ -14,7 +14,8 @@ IN              = $0200                 ; Input buffer
 
 RESET:
                 CLD                     ; Clear decimal arithmetic mode.
-                JSR     INIT_BUFFER
+                JSR     INIT_BUFFER     ; Initialize serial buffer
+                JSR     LCDINIT         ; Initialize LCD panel
                 CLI
                 LDA     #$1F            ; 8-N-1, 19200 bps
                 STA     ACIA_CTRL
