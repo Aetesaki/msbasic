@@ -36,9 +36,7 @@ ESCAPE:
 
 GETLINE:
                 LDA     #$0D            ; Send CR
-                JSR     ECHO
-                LDA     #$0A            ; Send LF
-                JSR     ECHO
+                JSR     WOZMONCRLF      ; Add LF to CR
 
                 LDY     #$01            ; Initialize text index.
 BACKSPACE:      DEY                     ; Back up text index.
@@ -131,9 +129,7 @@ SETADR:         LDA     L-1,X           ; Copy hex data to
 NXTPRNT:
                 BNE     PRDATA          ; NE means no address to print.
                 LDA     #$0D            ; CR.
-                JSR     ECHO            ; Output it.
-                LDA     #$0A            ; LF.
-                JSR     ECHO            ; Output it.
+                JSR     WOZMONCRLF      ; Add LF to CR
                 LDA     XAMH            ; 'Examine index' high-order byte.
                 JSR     PRBYTE          ; Output it in hex format.
                 LDA     XAML            ; Low-order 'examine index' byte.
